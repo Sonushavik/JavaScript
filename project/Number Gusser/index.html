@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guessify</title>
+    <style>
+        body{
+            margin: 0;
+            background-color: chocolate;
+            /* color: black; */
+        }
+
+        #wrapper{
+            width: auto;
+            height: max-content;
+            background-color: black;
+            color: chocolate;
+            text-align: center;
+            margin-top: 10px;
+            margin-bottom: 0px;
+            padding-bottom: 40px;
+            padding-top: 40px;
+            margin-inline: 20%;
+            border-radius: 30px;
+        }
+
+        h1{
+            font-size: 60px;
+            text-decoration: underline  lightgreen;
+        }
+
+        p{
+            font-size: 20px;
+        }
+
+        label{
+            font-size: 25px;
+            font-weight: bolder;
+        }
+
+        input{
+            width: 200px;
+            height: 30px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        input:hover{
+            background-color: burlywood;
+        }
+
+        #subt{
+            width: fit-content;
+            padding-inline: 10px;
+            font-weight: bold;
+            font-size: 15px;
+            background-color: green;
+            border-radius: 15px;
+
+        }
+
+        #subt:hover{
+            background-color: burlywood;
+        }
+
+        .lowOrHi{
+            color: green;
+            font-size: 25px;
+            font-weight: bold;
+            font-family: monospace;
+        }
+        
+        .guesses{
+            color: green;
+            font-size: 25px;
+            font-weight: bold;
+            font-family: monospace;
+        }
+
+        .lastResult{
+            color: green;
+            font-size: 25px;
+            font-weight: bold;
+            font-family: monospace;
+        }
+    
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <h1>Guessify</h1>
+        <p>Try and guess a random number between 1 and 100.</p>
+        <p>You have 10 attempts to guess the right number.</p>
+        <br>
+
+  
+            <label for="guessField" id="guess">Guess a number : </label>
+            <input type="number" id="guessField" class="guessField"><br><br>
+            <input type="submit" id="subt" value="Submit guess" class="guessSubmit">
+   
+        <div class="resultParas"></div>
+            <p >Previous Guesses: <span class="guesses"></span></p>
+            <p >Guesses Remaining: <span class="lastResult">10</span></p>
+            <p class="lowOrHi"></p>
+        </div>
+    </div>
+
+    <script src="numberGusser.js"></script>
+</body>
+</html>
