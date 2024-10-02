@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event</title>
+</head>
+<body>
+    <h1>Mr. Sonu</h1>
+    <button id="stop">stop</button>
+</body>
+
+<script>
+   let eventActive = true;
+   let chaneme;
+
+    const changeText = function() {
+        document.querySelector('h1').innerHTML = "Hello Sonu ! How are You..";
+    }
+
+    // Start the event with setTimeout
+    function startEvent() {
+        chaneme = setTimeout(changeText, 2000);
+    }
+
+    // Start the event initially
+    startEvent();
+
+    const stop = document.querySelector('#stop');
+
+    stop.addEventListener('click', function() {
+        if(eventActive) {
+            clearTimeout(chaneme);  // Stop the timeout
+            eventActive = false;
+            console.log("Stopped");
+            stop.innerHTML = "start";  // Change button text to 'start'
+        } else {
+            startEvent();  // Restart the timeout
+            eventActive = true;
+            console.log("Started");
+            stop.innerHTML = "stop";  // Change button text to 'stop'
+        }
+    });
+</script>
+</html>
